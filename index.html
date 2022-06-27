@@ -8,7 +8,8 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="container-header"><Header> CGPA to Percentage Converter</Header></div>
+    <div class="container-form">
         <div class="row">
             <div class="col-25">
                 <lable for="sem1">Semester 1</lable>
@@ -19,7 +20,7 @@
         </div>
         <div class="row">
             <div class="col-25">
-                <lable for="sem2"></lable>
+                <lable for="sem2">Semester 2</lable>
             </div>
             <div class="col-75">
                 <input class="main-form" type="number" name="semester 2" id="sem2" placeholder="SGPI/semester 2 pointer">
@@ -27,7 +28,7 @@
         </div>
         <div class="row">
             <div class="col-25">
-                <lable for="sem3"></lable>
+                <lable for="sem3">Semester 3</lable>
             </div>
             <div class="col-75">
                 <input class="main-form" type="number" name="semester 3" id="sem3" placeholder="SGPI/semester 3 pointer">
@@ -35,7 +36,7 @@
         </div>
         <div class="row">
             <div class="col-25">
-                <lable for="sem4"></lable>
+                <lable for="sem4">Semester 4</lable>
             </div>
             <div class="col-75">
                 <input class="main-form" type="number" name="semester 4" id="sem4" placeholder="SGPI/semester 4 pointer">
@@ -43,7 +44,7 @@
         </div>
         <div class="row">
             <div class="col-25">
-                <lable for="sem5"></lable>
+                <lable for="sem5">Semester 5</lable>
             </div>
             <div class="col-75">
                 <input class="main-form" type="number" name="semester 5" id="sem5" placeholder="SGPI/semester 5 pointer">
@@ -51,7 +52,7 @@
         </div>
         <div class="row">
             <div class="col-25">
-                <lable for="sem6"></lable>
+                <lable for="sem6">Semester 6</lable>
             </div>
             <div class="col-75">
                 <input class="main-form" type="number" name="semester 6" id="sem6" placeholder="SGPI/semester 6 pointer">
@@ -59,7 +60,7 @@
         </div>
         <div class="row">
             <div class="col-25">
-                <lable for="sem7"></lable>
+                <lable for="sem7">Semester 7</lable>
             </div>
             <div class="col-75">
                 <input class="main-form" type="number" name="semester 7" id="sem7" placeholder="SGPI/semester 7 pointer">
@@ -67,7 +68,7 @@
         </div>
         <div class="row">
             <div class="col-25">
-                <lable for="sem8"></lable>
+                <lable for="sem8">Semester 8</lable>
             </div>
             <div class="col-75">
                 <input class="main-form" type="number" name="semester 8" id="sem8" placeholder="SGPI/semester 8 pointer">
@@ -75,15 +76,18 @@
         </div>
         <br>
         <div class="row">
-        <button onclick="main()">Calculate
-
-        </button>
+            <div class="col-50">
+                <button onclick="main()">Calculate</button>
+            </div>
         </div>
     </div>
-    <div class="result-text">
-        <p>CGPA is :</p> <p id="CGPA"></p> <br>
-        <p>Percentage is:</p> <p id="Percent"></p>
+    <div class="container-result">
+        <div class="result-text">
+            <p>CGPA is :</p> <p id="CGPA"></p> <br>
+            <p>Percentage is:</p> <p id="Percent"></p>
+        </div>
     </div>
+    
 
     <!-- Scripts -->
     <script>
@@ -111,6 +115,7 @@
             //console.log(newArray)
             sum = newArray.reduce((a, b) => a + b, 0);
             CGPA = sum/newArray.length;
+            CGPA = Math.fround(CGPA)
             CgpaToPer = 7.1 * CGPA + 11;
 
         }

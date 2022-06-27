@@ -5,10 +5,11 @@ label {
     padding: 12px 12px 12px 0;
     display: inline-block;
 }
-.container {
+.container-form {
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: #f0f0f0;
     padding: 20px;
+    overflow: auto;
 }
 .col-25 {
     float: left;
@@ -21,3 +22,24 @@ label {
     width: 75%;
     margin-top: 6px;
 }
+.col-50{
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+  .container-header {
+    
+    padding: 10px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 20px;
+  }
