@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert CGPA to %</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-25">
+                <lable for="sem1">Semester 1</lable>
+            </div>
+            <div class="col-75">
+                <input class="main-form" type="number" name="semester 1" id="sem1" placeholder="SGPI/semester 1 pointer">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <lable for="sem2"></lable>
+            </div>
+            <div class="col-75">
+                <input class="main-form" type="number" name="semester 2" id="sem2" placeholder="SGPI/semester 2 pointer">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <lable for="sem3"></lable>
+            </div>
+            <div class="col-75">
+                <input class="main-form" type="number" name="semester 3" id="sem3" placeholder="SGPI/semester 3 pointer">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <lable for="sem4"></lable>
+            </div>
+            <div class="col-75">
+                <input class="main-form" type="number" name="semester 4" id="sem4" placeholder="SGPI/semester 4 pointer">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <lable for="sem5"></lable>
+            </div>
+            <div class="col-75">
+                <input class="main-form" type="number" name="semester 5" id="sem5" placeholder="SGPI/semester 5 pointer">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <lable for="sem6"></lable>
+            </div>
+            <div class="col-75">
+                <input class="main-form" type="number" name="semester 6" id="sem6" placeholder="SGPI/semester 6 pointer">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <lable for="sem7"></lable>
+            </div>
+            <div class="col-75">
+                <input class="main-form" type="number" name="semester 7" id="sem7" placeholder="SGPI/semester 7 pointer">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <lable for="sem8"></lable>
+            </div>
+            <div class="col-75">
+                <input class="main-form" type="number" name="semester 8" id="sem8" placeholder="SGPI/semester 8 pointer">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+        <button onclick="main()">Calculate
+
+        </button>
+        </div>
+    </div>
+    <div class="result-text">
+        <p>CGPA is :</p> <p id="CGPA"></p> <br>
+        <p>Percentage is:</p> <p id="Percent"></p>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        var SGPI = [];
+        var CGPA;
+        function main(){
+            getValue()
+            calc();
+            elChange();
+            document.getElementById("CGPA").innerHTML = CGPA;
+            clearArr();
+            
+        }
+        function getValue() {
+        var input = document.getElementsByClassName("main-form");
+        //console.log(input);
+        for (var i = 0; i < input.length; i++) {
+        var a = input[i];
+        SGPI.push(parseFloat(a.value));
+        }
+        }
+        function calc(){
+        
+        const newArray = SGPI.filter( value => !Number.isNaN(value) );
+            //console.log(newArray)
+            sum = newArray.reduce((a, b) => a + b, 0);
+            CGPA = sum/newArray.length;
+            CgpaToPer = 7.1 * CGPA + 11;
+
+        }
+        function elChange(){
+            document.getElementById("CGPA").innerHTML = CGPA;
+            document.getElementById("Percent").innerHTML = CgpaToPer;
+        }   
+        function clearArr(){
+            SGPI = [];
+            CGPA = null;
+        }
+
+    </script>
+</body>
+</html>
